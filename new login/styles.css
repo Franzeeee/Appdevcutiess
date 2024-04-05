@@ -15,14 +15,16 @@ body {
 
 .left-side, .right-side {
     flex: 1;
-    padding: 20px;
+
     border: 1px solid #ccc;
     box-sizing: border-box; 
 }
 
 .left-side {
     background-color: #F2F3F7;
+    padding: 20px;
 }
+
 
 .center-title {
     text-align: center;
