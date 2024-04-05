@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+    <title>library management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <h2 class="center-title">LIBRARY MANAGEMENT</h2>
+            <form id="loginForm" class="center-form"> 
+                <div class="form-group">
+                    <h4>Login</h4>
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter your username">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                    <a href="#">Forgot Password?</a>
+                    <button type="submit" class="btn btn-custom float-end">Login</button>
+                </div>
+            </form>
+        </div>
+        <div class="right-side">
+            <img src="LOGO.png" alt="LOGO">
+        </div>
+    </div>
+
+    <script>
+        // Function to handle form submission
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get values from input fields
+            var email = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Validate the email and password (you can add more complex validation if needed)
+            if (email.trim() === "" || password.trim() === "") {
+                alert("Please enter both email and password.");
+                return;
+            }
+
+            // Here you can add your unique ID validation logic
+            var uniqueId = prompt("Enter your unique ID:");
+            if (uniqueId !== "your_admin_unique_id") {
+                alert("Invalid unique ID.");
+                return;
+            }
+
+            // Store email and password in local storage
+            localStorage.setItem("email", email);
+            localStorage.setItem("password", password);
+
+            alert("Login successful!");
+        });
+    </script>
+</body>
+</html>
